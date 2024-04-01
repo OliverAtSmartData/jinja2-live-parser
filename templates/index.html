@@ -13,14 +13,24 @@
 <body>
     <form class="container">
         <div class="row">
-            <div class="col-md-5">
-                <h1>Template</h1>
-                <textarea id="template">{% include 'example_template.html' %}</textarea>
-            </div>
-            <div class="col-md-5">
+            <div class="col-md-12">
                 <h1>Render</h1>
                 <div id="render"></div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Template</h1>
+                <textarea id="template">{% include 'example_template.html' %}</textarea>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-md-12">
+                <h1>Values</h1>
+                <textarea id="values">{% include 'example_values.html' %}</textarea>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-2">
                 <h1>Settings</h1>
                 <div id="settings">
@@ -32,14 +42,7 @@
                     <input type="button" class="btn btn-danger" id="clear" value="Clear" />
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-5">
-                <h1>Values</h1>
-                <textarea id="values">{% include 'example_values.html' %}</textarea>
-            </div>
-            <div class="col-md-7">
+            <div class="col-md-10">
                 <h1>Custom Filters</h1>
                 <ul>
                 {% for f_name, f_func in custom_filters.items() %}

@@ -1,3 +1,11 @@
+function debounce(func, timeout = 300){
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+  };
+} 
+
 $(document).ready(function(){
     $('#clear').click(function() {
         $('#template').val('');
@@ -27,4 +35,9 @@ $(document).ready(function(){
             $('#render').html(response);
         });
     });
+
+    $("#template").keyup(debounce(function(e) {
+        $("#convert").click();
+    }, 500));
+
 });
